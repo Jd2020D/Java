@@ -1,0 +1,8 @@
+package com.axsos.calculator;
+
+public class Calculator {
+	private String operator="";
+	private double num1=0;
+	private double num2=0;
+	
+}

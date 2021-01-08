@@ -1,0 +1,11 @@
+import com.axsos.bank.*;
+public class BankTest {
+	public static void main(String[] args) {
+		BankAccount b1= new BankAccount();
+		BankAccount b2= new BankAccount();
+		System.out.println(BankAccount.getNumberOfAccounts());
+		System.out.println(BankAccount.getTotalMoney());
+		b1.depositeMoney("check", 1000);
+		b1.depositeMoney("saving", 1000);
+	}
+}

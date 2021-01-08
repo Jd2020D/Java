@@ -1,0 +1,69 @@
+package com.axsos.bank;
+
+import java.util.Random;
+
+public class BankAccount {
+	
+	private static int NumberOfAccounts=0;
+	private static double totalMoney=0;
+	String accountNumber="";
+	double checkingBalance=0;
+	
+	public void depositeMoney(String type,double amount) {
+		boolean deposite=false;
+		if (type.contentEquals("saving")) {
+			this.savingBalance+= amount;
+			deposite=true;
+		}else if (type.contentEquals("check")) {
+			this.checkingBalance+= amount;
+			deposite=true;
+
+		}
+		if(deposite)
+		totalMoney+=amount;
+
+	}
+	public void withdrawMoney(String type,double amount) {
+		boolean withdraw=false;
+		if (type.contentEquals("saving")&&this.savingBalance-amount>=0) {
+			this.savingBalance-= amount;
+			withdraw=true;
+		}else if (type.contentEquals("check")&&this.checkingBalance-amount>=0) {
+			this.checkingBalance-= amount;
+			withdraw=true;
+
+		}
+		if(withdraw)
+		totalMoney-=amount;
+
+	}
+	public void ShowTotalMoney() {
+		System.out.println("check account "+this.checkingBalance+"\nsaving account "+this.savingBalance+"\ntotal"+this.savingBalance+this.checkingBalance);
+	}
+	public double getCheckingBalance() {
+		return checkingBalance;
+	}
+	double savingBalance=0;
+	
+	public double getSavingBalance() {
+		return savingBalance;
+	}
+	public BankAccount() {
+		NumberOfAccounts++;
+		this.accountNumber=this.generateAccountNum();
+	}
+	private String generateAccountNum() {
+		String num="";
+		Random r= new Random();
+		for(int i=0;i<10;i++) {
+			num+=String.valueOf(r.nextInt(10));
+		}
+		return num;
+	}
+	public static int getNumberOfAccounts() {
+		return NumberOfAccounts;
+	}
+	public static double getTotalMoney() {
+		return totalMoney;
+	}
+}

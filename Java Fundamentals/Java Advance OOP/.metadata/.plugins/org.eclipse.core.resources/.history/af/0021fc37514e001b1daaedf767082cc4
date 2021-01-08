@@ -1,0 +1,34 @@
+package com.axsos.calculator;
+
+public class Calculator {
+	private String operation="";
+	private double operandOne=0;
+	private double operandTwo=0;
+	public Calculator() {}
+	public Calculator(String operator,double num1,double num2) {
+		this.operation=operator;
+		this.operandOne=num1;
+		this.operandTwo=num2;
+	}
+
+	public double getOperandOne() {
+		return operandOne;
+	}
+	public void setOperandOne(double num1) {
+		this.operandOne = num1;
+	}
+	public double getOperandTwo() {
+		return operandTwo;
+	}
+	public void setOperandTwo(double num2) {
+		this.operandTwo = num2;
+	}
+	public String getOperation() {
+		return operation;
+	}
+	public void setOperation(String operator) {
+		this.operation = operator;
+	}
+	
+	
+}

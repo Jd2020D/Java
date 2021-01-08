@@ -1,0 +1,4 @@
+1609718948657	Rename package 'com.axsos.jehad'
+1609735825873	Rename field 'savingsBalance'
+1609736821037	Encapsulate field 'NumberOfAccounts'
+1609737055620	Encapsulate field 'accountNumber'

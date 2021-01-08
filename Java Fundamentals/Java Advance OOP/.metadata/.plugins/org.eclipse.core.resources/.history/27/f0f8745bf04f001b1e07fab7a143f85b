@@ -1,0 +1,30 @@
+package ss;
+
+public class aaa {
+	
+	public static String replaceX(String s,String r) {
+		for (int i = 0; i < r.length(); i++) {
+			
+		}
+		return s;
+	}
+	
+	public static String filter(String s) {
+		String []  n = {"crack", "poop"};
+		String [] ss=s.split(" ");
+		for (int i = 0; i < n.length; i++) {
+			for (int j = 0; j < ss.length; j++) {
+				if(ss[j].indexOf(n[i]) >=0) {
+					
+				}
+			}
+		}
+		return s;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

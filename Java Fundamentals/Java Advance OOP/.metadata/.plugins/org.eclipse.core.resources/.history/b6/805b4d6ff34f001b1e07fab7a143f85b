@@ -1,0 +1,44 @@
+package ss;
+
+public class aaa {
+	
+	public static String generateX(int n) {
+		String b="";
+		for (int i = 0; i < n; i++) {
+			b+="x";
+		}
+		return b;
+	}
+	public static String replaceX(String s,String r) {
+		int index=s.toLowerCase().indexOf(r);
+		System.out.println(s);
+		System.out.println(r);
+		System.out.println(index);
+		if(index>=0) {
+			s=s.substring(0,index)+generateX(r.length())+s.substring(r.length(),s.length());
+		}
+		return s;
+	}
+	
+	public static String filter(String s) {
+		String []  n = {"crack", "poop"};
+		String [] ss=s.split(" ");
+		for (int i = 0; i < n.length; i++) {
+			for (int j = 0; j < ss.length; j++) {
+				ss[j]=replaceX(ss[j], n[i]);
+			}
+		}
+		s="";
+		for (String string : ss) {
+			s+=string+" ";
+		}
+		return s;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		String s="Snap crackle pop nincompoop!";
+		System.out.println(filter(s));
+	}
+
+}
