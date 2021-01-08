@@ -1,3 +1,0 @@
-INDEX VERSION 1.131
-E:\BootCamp\CodingDojo\Java\Competition\Competition\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1519915440.index
-\SimpleProject\src

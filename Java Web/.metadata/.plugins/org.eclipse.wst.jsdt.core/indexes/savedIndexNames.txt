@@ -1,4 +1,0 @@
-INDEX VERSION 1.4+E:\BootCamp\CodingDojo\Java\Competition\Competition\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-4219279280.index
-536366907.index
-4022966933.index
