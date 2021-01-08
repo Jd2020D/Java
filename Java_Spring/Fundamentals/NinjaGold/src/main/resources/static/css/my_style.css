@@ -1,0 +1,35 @@
+*{
+    margin:0;
+    padding: 0;
+}
+p span{
+    border: 1px solid black;
+    padding-right: 100px;
+}
+section:nth-child(2){
+    display: flex;
+    justify-content: center;
+}
+section:last-child{
+    border: 1px solid black;
+    height: 144px;
+    margin-left: 235px;
+    overflow: auto;
+    width: 1063px;
+}
+main> p{
+    margin: 20px 0 0 235px;
+}
+form{
+    text-align: center;
+    border: 1px solid black;
+    padding:50px;
+    margin:25px;
+    width: fit-content;
+}
+#b{ 
+    background-color: cadetblue;
+    box-shadow: black 1px 1px;
+    margin:20px 10px 10px 10px;
+
+}
