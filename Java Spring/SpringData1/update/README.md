@@ -3,10 +3,10 @@
             
 <h1>Update and Delete</h1>
 <p>In this assignment, you will be implementing the update and delete methods and test the endpoints with Postman. Continue using the same mvc project that we have been using so far. Here is some controller code to get you started.</p>
-<h5 id="srcmainjavacomcodingdojobookscontrollersbooks.java-1">src/main/java/com/codingdojo/mvc/controllers/BooksApi.java</h5>
+<h5 id="srcmainjavacomcodingdojobookscontrollersbooks.java-1">src/main/java/com/axsos/update/controllers/BooksApi.java</h5>
 <pre data-language="python" class="rainbow active_pre"><span class="comment from-rainbow">// ..</span>
-<span class="keyword from-rainbow">import</span> com.codingdojo.mvc.models.Book;
-<span class="keyword from-rainbow">import</span> com.codingdojo.mvc.services.BookService;
+<span class="keyword from-rainbow">import</span> com.axsos.update.models.Book;
+<span class="keyword from-rainbow">import</span> com.axsos.update.services.BookService;
 <span class="entity name function decorator from-rainbow">@RestController</span>
 <span class="keyword from-rainbow">public</span> <span class="keyword from-rainbow">class</span> BooksApi {
     <span class="keyword from-rainbow">private</span> final BookService bookService;
