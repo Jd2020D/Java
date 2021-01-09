@@ -1,7 +1,5 @@
-<div id="module_container">
-				<div class="module_content module_content_block">
-							
-																
+<div class="module_description active_lesson_with_video ">
+									
             
 <h1>Update and Delete</h1>
 <p>In this assignment, you will be implementing the update and delete methods and test the endpoints with Postman. Continue using the same mvc project that we have been using so far. Here is some controller code to get you started.</p>
@@ -36,4 +34,4 @@
     </ul>
 </div>
         
-</div>
+								</div>
