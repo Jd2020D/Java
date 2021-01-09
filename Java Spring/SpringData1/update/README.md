@@ -1,7 +1,6 @@
 <div id="module_container">
 				<div class="module_content module_content_block">
 							
-							<input type="hidden" id="current_module_id" name="authenticity_token" value="gCz/VXhagBPbvw+J8m4xXTLbZ/FQqkeC+Ul3z+iojlM=" current-module="37523" course-percentage="45" track-content-id="1215"> 
 							
 
 								<div class="module_description active_lesson_with_video ">
