@@ -1,0 +1,19 @@
+main{
+    width: 1000px;
+}
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    width: 100%;
+}
+a{
+    background-color: cadetblue;
+    border: 1px solid black;
+    box-shadow: black 1px 1px;
+    color:white;
+    text-decoration: none;
+}
