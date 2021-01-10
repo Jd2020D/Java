@@ -92,13 +92,9 @@
 &lt;a href="/books/new"&gt;New Book&lt;/a&gt;
 </pre>
 <p> <br> <br> </p>
-<div class="module_content module_content_block">
-							
-							<input type="hidden" id="current_module_id" name="authenticity_token" value="gCz/VXhagBPbvw+J8m4xXTLbZ/FQqkeC+Ul3z+iojlM=" current-module="37525" course-percentage="46" track-content-id="1215"> 
-							
 
-								<div class="module_description active_lesson active_lesson_with_video ">
-									
+
+<div class="module_content module_content_block">
 <h1>New and Create</h1>
 <h2>New Book</h2>
 <p>When the user visits "/books/new", we want to show them the form to create the book.</p>
