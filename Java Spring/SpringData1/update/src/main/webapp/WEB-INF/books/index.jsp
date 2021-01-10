@@ -16,6 +16,7 @@
 <table>
     <thead>
         <tr>
+            <th>ID</th>
             <th>Title</th>
             <th>Description</th>
             <th>Language</th>
@@ -25,6 +26,7 @@
     <tbody>
         <c:forEach items="${books}" var="book">
         <tr>
+            <td><c:out value="${book.id}"/></td>
             <td><c:out value="${book.title}"/></td>
             <td><c:out value="${book.description}"/></td>
             <td><c:out value="${book.language}"/></td>

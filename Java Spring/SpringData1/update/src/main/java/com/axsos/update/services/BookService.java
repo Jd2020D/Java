@@ -45,6 +45,15 @@ public class BookService {
 	 return null;
 		 
  }
+ public Book updateBook(Book b) {
+	 Book book=this.findBook(b.getId());
+	 if (book!= null) {
+		 bookRepository.save(b);
+	     return b;
+	 }
+	 return null;
+
+ }
  
  public void deleteBook(Long id) {
 	 try {
