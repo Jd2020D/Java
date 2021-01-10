@@ -42,10 +42,10 @@
             
             
 <h1>Index</h1>
-<p>In the next few lessons, we will be implementing our views for our mvc application and change our controller code from an API to a full web application.</p>
+<p>In the next few updates, we will be implementing our views for our mvc application and change our controller code from an API to a full web application.</p>
 <h2>All Books</h2>
 <p>First, we will create another controller named <code>BooksController</code>. We will also create a view folder named <code>books</code> with a jsp file named <code>index.jsp</code>. When a user visits "/books", we want to show them all the books that we have in our database.</p>
-<h5>src/main/java/com/codingdojo/mvc/controllers/BooksController.java</h5>
+<h5>src/main/java/com/axsos/update/controllers/BooksController.java</h5>
 <p>// ... imports removed for brevity</p>
 <p>@Controller</p>
 <p>public class BooksController {</p>
@@ -91,4 +91,3 @@
         
         
         									
-								</div>
