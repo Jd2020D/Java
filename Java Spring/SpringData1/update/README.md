@@ -147,35 +147,3 @@
 &lt;/form:form&gt;    
 </pre>
 									
-								</div>
-
-
-
-
-						
-
-					
-					
-					<!-- Modal Inactivity Notice Modal -->
-					<div class="modal fade info_modal" id="inactivity_notice_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-						<div class="modal-dialog" style="margin-top: 237.6px;">
-							<div class="modal-content">
-								<span class="hide_modal glyphicon glyphicon-remove" data-dismiss="modal" aria-label="Close"></span>
-								<div class="modal_header">
-									<h4>Inactivity Notice</h4>
-									<span class="glyphicon glyphicon-question-sign notice_tooltip pull-right" data-toggle="tooltip" data-placement="right" title="" data-original-title="The system keeps track if you are active or not. We are saving the total time you spent on each topic for course improvement and student support purposes."></span>
-								</div>
-								<div class="modal_body">
-									<p>You have been idle for a long time, click the button below if you are you are still there.</p>
-									<a href="#" class="btn btn-primary continue_btn" data-dismiss="modal" target="_blank">CLICK TO CONTINUE</a>
-								</div>
-							</div>
-						</div>
-					</div>
-					<!-- end of Modal Inactivity Notice Modal -->
-
-					<!-- Log out from another device modal --> <!-- end of Log out from another device modal -->
-				</div>
-        
-        
-        									
