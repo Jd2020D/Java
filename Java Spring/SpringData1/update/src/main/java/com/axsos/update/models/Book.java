@@ -42,7 +42,9 @@ public class Book {
 	    private Date updatedAt;
 	    
 	    public Book(String title, String desc, String lang, int pages) {
-	        this.title = title;
+	        super();
+
+	    	this.title = title;
 	        this.description = desc;
 	        this.language = lang;
 	        this.numberOfPages = pages;
@@ -92,17 +94,13 @@ public class Book {
 			return createdAt;
 		}
 
-		public void setCreatedAt(Date createdAt) {
-			this.createdAt = createdAt;
-		}
+		
 
 		public Date getUpdatedAt() {
 			return updatedAt;
 		}
 
-		public void setUpdatedAt(Date updatedAt) {
-			this.updatedAt = updatedAt;
-		}
+
 
 		// other getters and setters removed for brevity
 	    @PrePersist
