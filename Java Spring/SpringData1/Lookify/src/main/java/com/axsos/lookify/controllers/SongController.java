@@ -23,6 +23,11 @@ public class SongController {
 	 public SongController(SongService songService) {
 		 this.songService = songService;
 	 }
+	    @RequestMapping("/{any}")
+	    public String nothing(@PathVariable String any) {
+	    	return "redirect:/dashboard";
+	    }
+
 	 @RequestMapping("/")
 	 public String index() {
 		 return "index.jsp";
