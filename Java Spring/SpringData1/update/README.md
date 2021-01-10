@@ -88,6 +88,94 @@
 &lt;a href="/books/new"&gt;New Book&lt;/a&gt;
 </pre>
 <p> <br> <br> </p>
+<div class="module_content module_content_block">
+							
+							<input type="hidden" id="current_module_id" name="authenticity_token" value="gCz/VXhagBPbvw+J8m4xXTLbZ/FQqkeC+Ul3z+iojlM=" current-module="37525" course-percentage="46" track-content-id="1215"> 
+							
+
+								<div class="module_description active_lesson active_lesson_with_video ">
+									
+<h1>New and Create</h1>
+<h2>New Book</h2>
+<p>When the user visits "/books/new", we want to show them the form to create the book.</p>
+<h5>src/main/java/com/axsos/update/controllers/BooksController.java</h5>
+<p>// ... imports removed for brevity</p>
+<p>@Controller</p>
+<p>public class BooksController {</p>
+<p>    // other methods removed for brevity</p>
+<p>    </p>
+<p>    @RequestMapping("/books/new")</p>
+<p>    public String newBook(@ModelAttribute("book") Book book) {</p>
+<p>        return "/books/new.jsp";</p>
+<p>    }</p>
+<p>    @RequestMapping(value="/books", method=RequestMethod.POST)</p>
+<p>    public String create(@Valid @ModelAttribute("book") Book book, BindingResult result) {</p>
+<p>        if (result.hasErrors()) {</p>
+<p>            return "/books/new.jsp";</p>
+<p>        } else {</p>
+<p>            bookService.createBook(book);</p>
+<p>            return "redirect:/books";</p>
+<p>        }</p>
+<p>    }</p>
+<p>}</p>
+
+<h5>src/main/webapp/WEB-INF/books/new.jsp</h5>
+<pre class="">&lt;%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%&gt;    
+&lt;h1&gt;New Book&lt;/h1&gt;
+&lt;form:form action="/books" method="post" modelAttribute="book"&gt;
+    &lt;p&gt;
+        &lt;form:label path="title"&gt;Title&lt;/form:label&gt;
+        &lt;form:errors path="title"/&gt;
+        &lt;form:input path="title"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="description"&gt;Description&lt;/form:label&gt;
+        &lt;form:errors path="description"/&gt;
+        &lt;form:textarea path="description"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="language"&gt;Language&lt;/form:label&gt;
+        &lt;form:errors path="language"/&gt;
+        &lt;form:input path="language"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="numberOfPages"&gt;Pages&lt;/form:label&gt;
+        &lt;form:errors path="numberOfPages"/&gt;     
+        &lt;form:input type="number" path="numberOfPages"/&gt;
+    &lt;/p&gt;    
+    &lt;input type="submit" value="Submit"/&gt;
+&lt;/form:form&gt;    
+</pre>
+									
+								</div>
+
+
+
+
+						
+
+					
+					
+					<!-- Modal Inactivity Notice Modal -->
+					<div class="modal fade info_modal" id="inactivity_notice_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+						<div class="modal-dialog" style="margin-top: 237.6px;">
+							<div class="modal-content">
+								<span class="hide_modal glyphicon glyphicon-remove" data-dismiss="modal" aria-label="Close"></span>
+								<div class="modal_header">
+									<h4>Inactivity Notice</h4>
+									<span class="glyphicon glyphicon-question-sign notice_tooltip pull-right" data-toggle="tooltip" data-placement="right" title="" data-original-title="The system keeps track if you are active or not. We are saving the total time you spent on each topic for course improvement and student support purposes."></span>
+								</div>
+								<div class="modal_body">
+									<p>You have been idle for a long time, click the button below if you are you are still there.</p>
+									<a href="#" class="btn btn-primary continue_btn" data-dismiss="modal" target="_blank">CLICK TO CONTINUE</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- end of Modal Inactivity Notice Modal -->
+
+					<!-- Log out from another device modal --> <!-- end of Log out from another device modal -->
+				</div>
         
         
         									
