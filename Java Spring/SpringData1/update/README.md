@@ -170,4 +170,78 @@
 </pre>
         
         
-        
+<h1>Edit and Update</h1>
+<p>Similarly to New and Create, we are going to implement the Edit and Update features of our web application.</p>
+<h2>Edit Book</h2>
+<p>When the user visits "/books/1/edit", we want to show them a page with a form to edit the book with id 1.</p>
+<h5>src/main/java/com/axsos/update/controllers/BooksController.java</h5>
+<pre>
+<p>// ... imports removed for brevity</p>
+<p>@Controller</p>
+<p>public class BooksController {</p>
+<p>    // other methods removed for brevity</p>
+<p>    @RequestMapping("/books/{id}/edit")</p>
+<p>    public String edit(@PathVariable("id") Long id, Model model) {</p>
+<p>        Book book = bookService.findBook(id);</p>
+<p>        model.addAttribute("book", book);</p>
+<p>        return "/books/edit.jsp";</p>
+<p>    }</p>
+<p>    </p>
+<p>    @RequestMapping(value="/books/{id}", method=RequestMethod.PUT)</p>
+<p>    public String update(@Valid @ModelAttribute("book") Book book, BindingResult result) {</p>
+<p>        if (result.hasErrors()) {</p>
+<p>            return "/books/edit.jsp";</p>
+<p>        } else {</p>
+<p>            bookService.updateBook(book);</p>
+<p>            return "redirect:/books";</p>
+<p>        }</p>
+<p>    }</p>
+<p>}</p>
+</pre>
+<p>Our update method will render the "/books/edit.jsp" view file if there are errors but redirect to "/books" if we are able to update the book successfully.</p>
+<h5>src/main/webapp/WEB-INF/books/edit.jsp</h5>
+<pre class="">&lt;%@ page isErrorPage="true" %&gt;    
+&lt;%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%&gt;     
+&lt;h1&gt;Edit Book&lt;/h1&gt;
+&lt;form:form action="/books/${book.id}" method="post" modelAttribute="book"&gt;
+    &lt;input type="hidden" name="_method" value="put"&gt;
+    &lt;p&gt;
+        &lt;form:label path="title"&gt;Title&lt;/form:label&gt;
+        &lt;form:errors path="title"/&gt;
+        &lt;form:input path="title"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="description"&gt;Description&lt;/form:label&gt;
+        &lt;form:errors path="description"/&gt;
+        &lt;form:textarea path="description"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="language"&gt;Language&lt;/form:label&gt;
+        &lt;form:errors path="language"/&gt;
+        &lt;form:input path="language"/&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        &lt;form:label path="numberOfPages"&gt;Pages&lt;/form:label&gt;
+        &lt;form:errors path="numberOfPages"/&gt;     
+        &lt;form:input type="number" path="numberOfPages"/&gt;
+    &lt;/p&gt;    
+    &lt;input type="submit" value="Submit"/&gt;
+&lt;/form:form&gt;
+</pre>
+
+									
+<h1>Delete</h1>
+<p>We already created the delete button in the show page of each book. All we have to do is implement the destroy action in our controller.</p>
+<pre>
+<p>// ... imports removed for brevity</p>
+<p>@Controller</p>
+<p>public class BooksController {</p>
+<p>    // other methods removed for brevity</p>
+<p>    @RequestMapping(value="/books/{id}", method=RequestMethod.DELETE)</p>
+<p>    public String destroy(@PathVariable("id") Long id) {</p>
+<p>        bookService.deleteBook(id);</p>
+<p>        return "redirect:/books";</p>
+<p>    }</p>
+<p>}</p>
+<p></p>
+</pre>
