@@ -17,3 +17,28 @@ a{
     color:white;
     text-decoration: none;
 }
+form{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 50px;
+}
+label{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+
+}
+input,textarea{
+	display:block;
+}
+
+form.none{
+	border:none;
+	padding:0;
+		display:inline;
+	
+}
+form.none input[type="submit"]{
+		display:inline;
+	
+}
