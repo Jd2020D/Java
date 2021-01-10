@@ -4,7 +4,7 @@
 <h1>Update and Delete</h1>  
 <p>In this assignment, you will be implementing the update and delete methods and test the endpoints with Postman. Continue using the same mvc project that we have been using so far. Here is some controller code to get you started.</p>
 <h5 id="srcmainjavacomcodingdojobookscontrollersbooks.java-1">src/main/java/com/axsos/update/controllers/BooksApi.java</h5>
-
+<pre>
 // ..
 <p>import com.axsos.update.models.Book;</p>
 <p>import com.axsos.update.services.BookService;</p>
@@ -26,6 +26,7 @@
 <p>        bookService.deleteBook(id);</p>
 <p>    }</p>
 <p>}</p>
+</pre>
 
 <p>Your task is to write the service methods that will correctly update and delete a book. To update a book, you will have to use the setter methods from the domain model and then call the <span>save</span> method. As you can see, <span>save</span> is used for both creating and updating. To delete a book, you will have to use the <span>deleteById</span> method. Below, I have linked to the <span>CrudRepository</span> documentation.
 </p>
@@ -46,6 +47,7 @@
 <h2>All Books</h2>
 <p>First, we will create another controller named <code>BooksController</code>. We will also create a view folder named <code>books</code> with a jsp file named <code>index.jsp</code>. When a user visits "/books", we want to show them all the books that we have in our database.</p>
 <h5>src/main/java/com/axsos/update/controllers/BooksController.java</h5>
+<pre>
 <p>// ... imports removed for brevity</p>
 <p>@Controller</p>
 <p>public class BooksController {</p>
@@ -62,6 +64,8 @@
 <p>        return "/books/index.jsp";</p>
 <p>    }</p>
 <p>}</p>
+</pre>
+
 <h5>src/main/webapp/WEB-INF/books/index.jsp</h5>
 <pre class="">&lt;%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%&gt;    
 &lt;h1&gt;All Books&lt;/h1&gt;
@@ -99,6 +103,7 @@
 <h2>New Book</h2>
 <p>When the user visits "/books/new", we want to show them the form to create the book.</p>
 <h5>src/main/java/com/axsos/update/controllers/BooksController.java</h5>
+<pre>
 <p>// ... imports removed for brevity</p>
 <p>@Controller</p>
 <p>public class BooksController {</p>
@@ -118,6 +123,7 @@
 <p>        }</p>
 <p>    }</p>
 <p>}</p>
+</pre>
 
 <h5>src/main/webapp/WEB-INF/books/new.jsp</h5>
 <pre class="">&lt;%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%&gt;    
