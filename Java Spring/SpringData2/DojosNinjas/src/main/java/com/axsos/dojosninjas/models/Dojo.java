@@ -1,15 +1,15 @@
-package com.axsos.license.models;
+package com.axsos.dojosninjas.models;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
@@ -17,22 +17,16 @@ import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
-import com.sun.istack.NotNull;
-
 //...
 @Entity
-@Table(name="persons")
-public class Person {
+@Table(name="dojos")
+public class Dojo {
  
  @Id
  @GeneratedValue(strategy = GenerationType.IDENTITY)
  private Long id;
- @NotNull
  @Size(min=1)
- private String firstName;
- @NotNull
- @Size(min=1)
- private String lastName;
+ private String name;
  @Column(updatable=false)
  @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date createdAt;
@@ -46,54 +40,38 @@ public class Person {
  protected void onUpdate(){
      this.updatedAt = new Date();
  }
- @OneToOne(mappedBy="person", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
- private License license;
+ @OneToMany(mappedBy="dojo", fetch = FetchType.LAZY)
+ private List<Ninja> ninjas;
  
- public Person() {
+ public Dojo() {
      
  }
-
-public Person(String firstName, String lastName, License license) {
+public Dojo(String name) {
 	super();
-	this.firstName = firstName;
-	this.lastName = lastName;
-	this.license = license;
+	this.name = name;
 }
-
-public String getFirstName() {
-	return firstName;
+public String getName() {
+	return name;
 }
-
-public void setFirstName(String firstName) {
-	this.firstName = firstName;
+public void setName(String name) {
+	this.name = name;
 }
-
-public String getLastName() {
-	return lastName;
+public List<Ninja> getNinjas() {
+	return ninjas;
 }
-
-public void setLastName(String lastName) {
-	this.lastName = lastName;
+public void setNinjas(List<Ninja> ninjas) {
+	this.ninjas = ninjas;
 }
-
-public License getLicense() {
-	return license;
-}
-
-public void setLicense(License license) {
-	this.license = license;
-}
-
 public Long getId() {
 	return id;
 }
-
 public Date getCreatedAt() {
 	return createdAt;
 }
-
 public Date getUpdatedAt() {
 	return updatedAt;
 }
+
+ 
  
 }

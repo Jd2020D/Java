@@ -14,6 +14,8 @@ import javax.persistence.OneToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.sun.istack.NotNull;
@@ -28,9 +30,12 @@ public class License {
  private Long id;
  private Integer number;
 @DateTimeFormat(pattern="yyyy-MM-dd")
+@NotNull
  private Date expirationDate;
 @NotNull
+@Size(min=1)
  private String state;
+
  @Column(updatable=false)
  @DateTimeFormat(pattern="yyyy-MM-dd")
  private Date createdAt;
@@ -77,12 +82,19 @@ public Date getExpirationDate() {
 	return expirationDate;
 }
 public void setExpirationDate(Date expirationDate) {
+	System.out.println("ben burda");
 	this.expirationDate = expirationDate;
 }
 public String getExpirationDateFormat() {
+	String date="";
+	try {
 	SimpleDateFormat df = new SimpleDateFormat("MM/dd/yyyy");
-	return df.format(this.expirationDate);
-
+	date= df.format(this.expirationDate);
+	}
+	catch(Exception e) {
+		
+	}
+	return date;
 }
 public String getState() {
 	return state;

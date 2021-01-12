@@ -47,8 +47,9 @@ public class HomeController {
 	 // create license
 
 	 @RequestMapping(value="/licenses/new", method=RequestMethod.POST)
-	 public String create(@Valid @ModelAttribute("license") License license, BindingResult result) {
+	 public String create(@Valid @ModelAttribute("license") License license, BindingResult result,Model model) {
 		 if (result.hasErrors()) {
+			 model.addAttribute("persons",this.homeService.nonLicensedPersons());
 	         return "newLicense.jsp";
 	     } else {
 	    	 if(this.homeService.isPersonHasLicense(license.getPerson()))
