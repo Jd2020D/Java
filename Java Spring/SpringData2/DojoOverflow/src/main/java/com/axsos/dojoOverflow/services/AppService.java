@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.axsos.dojoOverflow.models.Answer;
 import com.axsos.dojoOverflow.models.Question;
-import com.axsos.dojoOverflow.models.QuestionBean;
+import com.axsos.dojoOverflow.models.QuestionForm;
 import com.axsos.dojoOverflow.models.Tag;
 import com.axsos.dojoOverflow.repositories.AnswerRepository;
 import com.axsos.dojoOverflow.repositories.QuestionRepository;
@@ -38,8 +38,8 @@ public class AppService {
 		answer=this.answerRepository.save(answer);
 }
 
-	public Question createQuestion(QuestionBean questionBean) {
-		String[] tags=questionBean.getTagsList();
+	public Question createQuestion(QuestionForm form) {
+		String[] tags=form.getTagsList();
 		List<Tag> tagsList = new ArrayList<Tag>() ;
 		for(int i=0;i<tags.length;i++) {
 			Tag temp=this.tagRepository.findBySubject(tags[i]).orElse(null);
@@ -47,7 +47,7 @@ public class AppService {
 				temp=this.tagRepository.save(new Tag(tags[i]));
 			tagsList.add(temp);
 		}
-		return this.questionRepository.save(new Question(questionBean.getQuestion(),tagsList));
+		return this.questionRepository.save(new Question(form.getQuestion(),tagsList));
 
 	}
 	

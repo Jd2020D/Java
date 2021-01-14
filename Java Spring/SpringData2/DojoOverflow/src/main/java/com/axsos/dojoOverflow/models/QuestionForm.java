@@ -3,7 +3,7 @@ package com.axsos.dojoOverflow.models;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
-public class QuestionBean {
+public class QuestionForm {
 	@NotBlank(message = "THIS FIELD IS REQUIRED!")
 	private String question;
 	@Pattern(regexp="^(([a-zA-Z\\s])+$|([a-zA-Z\\s]+,)[a-zA-Z\\s]+){1,2}$",message="Tags must be separated by commas, max 3")

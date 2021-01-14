@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.axsos.dojoOverflow.models.Answer;
 import com.axsos.dojoOverflow.models.Question;
-import com.axsos.dojoOverflow.models.QuestionBean;
+import com.axsos.dojoOverflow.models.QuestionForm;
 import com.axsos.dojoOverflow.services.AppService;
 
 @Controller
@@ -47,11 +47,11 @@ public class AppController {
 	     return "redirect:/questions/"+question.getId().toString();
 	 }
 	 @RequestMapping("/questions/new")
-	 public String viewQuestion(@ModelAttribute("newQuestion") QuestionBean question) {
+	 public String viewQuestion(@ModelAttribute("newQuestion") QuestionForm question) {
 	     return "newQuestionPage.jsp";
 	 }
 	 @RequestMapping(value="/questions/new", method=RequestMethod.POST)
-	 public String addQuestion(@Valid @ModelAttribute("newQuestion") QuestionBean question, BindingResult result) {
+	 public String addQuestion(@Valid @ModelAttribute("newQuestion") QuestionForm question, BindingResult result) {
 	     if(result.hasErrors())
 	    	 return "newQuestionPage.jsp";
 	     Question question_created=this.appService.createQuestion(question);
