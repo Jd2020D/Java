@@ -1,0 +1,44 @@
+main{
+    width: 1000px;
+}
+table, td, th {
+    border: 1px solid black;
+    text-align: center;
+}
+table {
+    border-collapse: collapse;
+    margin-bottom: 100px;
+    width: 100%;
+}
+a{
+    background-color: cadetblue;
+    border: 1px solid black;
+    box-shadow: black 1px 1px;
+    color:white;
+    text-decoration: none;
+}
+form{
+    border: 1px solid black;
+    width: fit-content;
+    padding: 50px;
+}
+label{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+
+}
+input,textarea{
+	display:block;
+}
+
+form.none{
+	border:none;
+	padding:0;
+		display:inline;
+	
+}
+form.none input[type="submit"]{
+		display:inline;
+	
+}
