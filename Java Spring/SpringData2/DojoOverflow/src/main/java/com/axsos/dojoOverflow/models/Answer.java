@@ -12,7 +12,8 @@ public class Answer {
     private Long id;
     @NotBlank(message = "THIS FIELD IS REQUIRED!")
     private String answer;
-    @Column(updatable = false)
+
+	@Column(updatable = false)
     private Date createdAt;
     private Date updatedAt;
     @ManyToOne(fetch = FetchType.LAZY)
@@ -21,13 +22,21 @@ public class Answer {
 
     public Answer() {
     }
+    public Answer(String answer,Question question) {
+    	this.answer=answer;
+    	this.question=question;
+    }
 
     public Long getId() {
         return id;
     }
 
 
-    public String getAnswer() {
+    public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getAnswer() {
         return answer;
     }
 

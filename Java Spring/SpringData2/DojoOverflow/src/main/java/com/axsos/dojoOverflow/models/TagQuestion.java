@@ -13,7 +13,6 @@ import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
-import javax.validation.constraints.Pattern;
 
 //...
 @Entity
@@ -43,7 +42,12 @@ public class TagQuestion {
  @JoinColumn(name="tag_id")
  private Tag tag;
  
- public TagQuestion() {
+ public TagQuestion(Question question, Tag tag) {
+	this.question = question;
+	this.tag = tag;
+}
+
+public TagQuestion() {
      
  }
 public Question getQuestion() {

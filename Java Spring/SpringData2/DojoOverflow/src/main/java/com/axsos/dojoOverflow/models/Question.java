@@ -27,9 +27,8 @@ public class Question {
     public Question() {
     }
 
-    public Question( String question, List<Tag> tags) {
+    public Question( String question) {
 		this.question = question;
-		this.tags = tags;
 	}
 
 	public Long getId() {

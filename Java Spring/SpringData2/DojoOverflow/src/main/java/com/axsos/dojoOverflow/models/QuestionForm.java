@@ -1,5 +1,8 @@
 package com.axsos.dojoOverflow.models;
 
+import java.util.Arrays;
+import java.util.HashSet;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 
@@ -21,7 +24,8 @@ public class QuestionForm {
 		this.tags = tags;
 	}
 	public String[] getTagsList() {
-		return this.tags.split(",");
+
+		return new HashSet<String>(Arrays.asList(this.tags.split(","))).toArray(new String[0]);
 	}
 	
 	
